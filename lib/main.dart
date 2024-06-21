@@ -7,32 +7,49 @@ void main() {
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+int increment(int val) {
+  return (val + 1);
+}
 
+class MyApp extends StatelessWidget {
+  MyApp({super.key});
+  int count = 0;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-          backgroundColor: Colors.yellow,
+          backgroundColor: Colors.white,
+          appBar: AppBar(
+            backgroundColor: Colors.deepPurple[200],
+            title: Center(child: Text("Tap Counter")),
+          ),
           body: Column(
             children: [
               Expanded(
+                flex: 2,
                 child: Container(
-                  color: Colors.red,
+                  color: Colors.grey,
+                  child: Center(
+                      child: Text(
+                    "$count",
+                    style: TextStyle(
+                      fontSize: 28,
+                    ),
+                  )),
                 ),
               ),
               Expanded(
-                child: Container(
-                  color: Colors.yellow,
-                  child: Icon(Icons.star, size: 64),
+                child: GestureDetector(
+                  onTap: () {
+                    count = increment(count);
+                  },
+                  child: Icon(
+                    Icons.add,
+                    size: 64,
+                  ),
                 ),
-              ),
-              Expanded(
-                  child: Container(
-                color: Colors.green,
-              ))
+              )
             ],
           )),
     );
