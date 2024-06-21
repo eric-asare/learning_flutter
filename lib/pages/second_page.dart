@@ -1,0 +1,20 @@
+import 'package:flutter/material.dart';
+
+class SecondPage extends StatelessWidget {
+  const SecondPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("2nd Page"),
+        titleTextStyle: TextStyle(
+          color: Colors.white,
+          fontSize: 18,
+          fontWeight: FontWeight.bold,
+        ),
+        backgroundColor: Colors.blueAccent,
+      ),
+    );
+  }
+}
