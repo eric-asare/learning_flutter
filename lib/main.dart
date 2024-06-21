@@ -7,7 +7,7 @@ void main() {
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget{
+class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
@@ -15,33 +15,26 @@ class MyApp extends StatelessWidget{
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: Colors.lightBlueAccent,
-        appBar: AppBar(
-          title: Text("The Love App"),
-          backgroundColor: const Color.fromARGB(255, 206, 193, 244),
-          elevation: 0,
-          leading: Icon(Icons.menu),
-          actions: [
-            IconButton(onPressed: (){}, icon: Icon(Icons.logout))
-          ],
-        ),
-        body: Center(
-          child: Container(
-            height: 300,
-            width: 300,
-            padding:EdgeInsets.all(25),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(20)
-            ),
-            child: Icon(
-              Icons.favorite,
-              color: Colors.red,
-              size: 64),  
-          ),
-        ),
-        ),
+          backgroundColor: Colors.yellow,
+          body: Column(
+            children: [
+              Expanded(
+                child: Container(
+                  color: Colors.red,
+                ),
+              ),
+              Expanded(
+                child: Container(
+                  color: Colors.yellow,
+                  child: Icon(Icons.star, size: 64),
+                ),
+              ),
+              Expanded(
+                  child: Container(
+                color: Colors.green,
+              ))
+            ],
+          )),
     );
   }
-
 }
