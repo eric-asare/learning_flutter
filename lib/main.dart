@@ -1,7 +1,9 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:hello_world/pages/home_page.dart';
+import 'package:hello_world/pages/logout_page.dart';
+import 'package:hello_world/pages/settings_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -14,27 +16,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-          backgroundColor: Colors.yellow,
-          body: Column(
-            children: [
-              Expanded(
-                child: Container(
-                  color: Colors.red,
-                ),
-              ),
-              Expanded(
-                child: Container(
-                  color: Colors.yellow,
-                  child: Icon(Icons.star, size: 64),
-                ),
-              ),
-              Expanded(
-                  child: Container(
-                color: Colors.green,
-              ))
-            ],
-          )),
+      home: HomePage(),
+      routes: {
+        '/homePage': (context) => HomePage(),
+        '/settingsPage': (context) => SettingsPage(),
+        '/logoutPage': (context) => LogoutPage()
+      },
     );
   }
 }
